@@ -43,6 +43,35 @@ async function init() {
             if (ctEl) ctEl.textContent = Math.max(cities.size, 4);
             if (atEl) atEl.textContent = Math.max(totalAttendees, 420).toLocaleString();
           }
+
+          // Also update impact stats
+          const impEv = document.getElementById('impact-events');
+          const impHo = document.getElementById('impact-hosts');
+          const impCi = document.getElementById('impact-cities');
+          const impSa = document.getElementById('impact-satisfaction');
+          const uniqueHosts = new Set(allEvents.map(e => e.venue).filter(Boolean)).size;
+          if (typeof animateCounter === 'function') {
+            animateCounter(impEv, allEvents.length);
+            animateCounter(impHo, Math.max(uniqueHosts, 12));
+            animateCounter(impCi, Math.max(cities.size, 4));
+            animateCounter(impSa, 98);
+          } else {
+            if (impEv) impEv.textContent = allEvents.length;
+            if (impHo) impHo.textContent = Math.max(uniqueHosts, 12);
+            if (impCi) impCi.textContent = Math.max(cities.size, 4);
+            if (impSa) impSa.textContent = '98%';
+          }
+
+          // Update left sidebar stats
+          const leftEv = document.getElementById('left-stat-events');
+          const leftTk = document.getElementById('left-stat-tickets');
+          const leftHs = document.getElementById('left-stat-hosts');
+          const leftCt = document.getElementById('left-stat-cities');
+          if (leftEv) leftEv.textContent = allEvents.length;
+          if (leftTk) leftTk.textContent = Math.max(totalAttendees, 420).toLocaleString();
+          if (leftHs) leftHs.textContent = Math.max(uniqueHosts, 12);
+          if (leftCt) leftCt.textContent = Math.max(cities.size, 4);
+
           io.disconnect();
         }
       }, { threshold: 0.5 });
@@ -51,6 +80,9 @@ async function init() {
 
     // Populate category & location dropdowns
     populateHomeFilters(eventsRes.categories || [], eventsRes.locations || []);
+
+    // Populate hero sidebar categories
+    populateHeroCategories(eventsRes.categories || []);
 
     // Render featured events
     const featured = featuredRes.events || allEvents.filter(e => e.featured).slice(0, 6);
@@ -61,6 +93,24 @@ async function init() {
     const grid = document.getElementById('featured-grid');
     if (grid) grid.innerHTML = '<div class="empty-state"><h3>Unable to load events</h3><p>Please check the server connection and try again.</p></div>';
   }
+}
+
+function populateHeroCategories(categories) {
+  const container = document.getElementById('hero-categories');
+  if (!container || !categories.length) return;
+
+  const icons = {
+    'Music': '🎵',
+    'Conference': '💻',
+    'Wellness': '🧘',
+    'Food': '🍛',
+    'Social': '🤝'
+  };
+
+  container.innerHTML = categories.map(c => {
+    const icon = icons[c] || '✦';
+    return `<a href="/events.html?category=${encodeURIComponent(c)}" class="sidebar-tag">${icon} ${c}</a>`;
+  }).join('');
 }
 
 function doSearch() {

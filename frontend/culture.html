@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rooted in Culture — Gather Nepal</title>
+  <meta name="description" content="Experience events rooted in Nepal's living heritage. From Patan's ancient courtyards to Pokhara's lakeside — discover authentic cultural experiences." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,300..600&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css" />
+  <style>
+    .pillar-hero { padding: 140px 0 var(--2xl); background: var(--cream); position: relative; overflow: hidden; }
+    .pillar-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--2xl); align-items: center; }
+    .pillar-hero h1 em { font-style: italic; font-weight: 430; color: var(--brick); }
+    .pillar-hero .lead { font-size: 1.1rem; color: var(--ink-soft); margin-top: var(--md); }
+    .pillar-hero-img { border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .pillar-hero-img img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/3; }
+    .pillar-content { padding: var(--3xl) 0; }
+    .pillar-section { margin-bottom: var(--3xl); }
+    .pillar-section h2 { margin-bottom: var(--lg); }
+    .pillar-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--lg); }
+    .pillar-card { background: var(--cream); border: 1px solid var(--border-subtle); border-radius: var(--r-lg); padding: var(--xl); display: flex; gap: var(--md); }
+    .pillar-card-icon { width: 56px; height: 56px; border-radius: 50%; background: var(--amber-glow); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--brick); }
+    .pillar-card h3 { font-size: 1.1rem; margin-bottom: var(--sm); }
+    .pillar-card p { font-size: 0.9rem; color: var(--ink-soft); }
+    .pillar-quote { background: var(--paper-2); border-left: 4px solid var(--brick); padding: var(--xl) var(--2xl); border-radius: var(--r-md); margin: var(--2xl) 0; }
+    .pillar-quote p { font-family: var(--font-serif); font-size: 1.3rem; font-style: italic; color: var(--ink); line-height: 1.6; }
+    .pillar-quote footer { margin-top: var(--md); font-size: 0.9rem; color: var(--ink-soft); }
+    .cta-box { background: var(--brick); color: #fff; border-radius: var(--r-lg); padding: var(--2xl); text-align: center; }
+    .cta-box h2 { color: #fff; margin-bottom: var(--md); }
+    .cta-box p { color: rgba(255,255,255,0.85); margin-bottom: var(--lg); }
+    .cta-box .btn { background: #fff; color: var(--brick); }
+    .cta-box .btn:hover { background: var(--cream); }
+    @media (max-width: 768px) {
+      .pillar-hero-grid { grid-template-columns: 1fr; }
+      .pillar-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <div class="container">
+      <a href="/" class="brand" aria-label="Gather Nepal Home">Gather<em> Nepal</em></a>
+      <div class="nav-links" id="navLinks">
+        <a href="/">Home</a>
+        <a href="/events.html">Browse Events</a>
+        <a href="/#philosophy">Our Story</a>
+        <a href="/#contact">Contact</a>
+        <a href="/dashboard.html" id="dashboard-nav-link" style="display:none;">My Tickets</a>
+        <a href="/create-event.html" id="create-nav-link" style="display:none;">Host Event</a>
+        <a href="/signup.html" class="btn btn-ghost" id="signup-nav-btn">Sign Up</a>
+        <a href="/login.html" class="btn btn-primary nav-cta" id="login-nav-btn">Log In</a>
+        <span id="user-name-display" style="color:var(--brick); font-weight:600; font-size:0.88rem;"></span>
+        <button id="logout-btn" class="btn btn-ghost" style="display:none;">Log Out</button>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="pillar-hero" aria-labelledby="pillar-title">
+    <div class="container">
+      <div class="pillar-hero-grid">
+        <div class="reveal">
+          <span class="overline">Our Philosophy</span>
+          <h1 id="pillar-title">Rooted in<br><em>Culture</em></h1>
+          <p class="lead">From Patan's ancient courtyards to Pokhara's lakeside — events rooted in Nepal's living heritage. We celebrate traditions while creating new ones.</p>
+          <div style="margin-top: var(--lg); display: flex; gap: var(--md); flex-wrap: wrap;">
+            <a href="/events.html" class="btn btn-primary">Discover Events</a>
+            <a href="/create-event.html" class="btn btn-outline">Host Cultural Event</a>
+          </div>
+        </div>
+        <div class="pillar-hero-img reveal reveal-delay-1">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=80" alt="Traditional Nepali cultural celebration" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pillar-content">
+    <div class="container">
+
+      <div class="pillar-section">
+        <span class="overline">Nepal's Living Heritage</span>
+        <h2>Where tradition meets modern gathering</h2>
+        <p class="lead" style="max-width: 65ch; margin-bottom: var(--xl);">Nepal's cultural heritage spans thousands of years — from Newari festivals in the Kathmandu Valley to Thangka painting workshops in Bhaktapur. Gather Nepal connects you with events that honor these traditions while building new community experiences.</p>
+        
+        <div class="pillar-grid">
+          <div class="pillar-card reveal">
+            <div class="pillar-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 21h8M12 17v4M5 4h14v5a7 7 0 0 1-14 0V4z"/><path d="M5 6H3a2 2 0 0 0 0 4h2M19 6h2a2 2 0 0 1 0 4h-2"/></svg>
+            </div>
+            <div>
+              <h3>Traditional Arts</h3>
+              <p>Thangka painting, wood carving, pottery, and Newari craft workshops led by master artisans.</p>
+            </div>
+          </div>
+          <div class="pillar-card reveal reveal-delay-1">
+            <div class="pillar-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            </div>
+            <div>
+              <h3>Live Music & Dance</h>
+              <p>From classical Nepali ragas to contemporary fusion — experience music in historic venues.</p>
+            </div>
+          </div>
+          <div class="pillar-card reveal reveal-delay-2">
+            <div class="pillar-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V7l8-4 8 4v14M9 21V12h6v9"/></svg>
+            </div>
+            <div>
+              <h3>Sacred Spaces</h3>
+              <p>Events held in ancient courtyards, temples, and heritage sites across the Kathmandu Valley.</p>
+            </div>
+          </div>
+          <div class="pillar-card reveal reveal-delay-3">
+            <div class="pillar-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div>
+              <h3>Cultural Festivals</h3>
+              <p>Dashain, Tihar, Holi, and local jatra celebrations — join the festivals that define Nepal.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pillar-quote reveal">
+        <p>"The Newari cooking class I attended at a Patan courtyard wasn't just about learning recipes — it was about understanding centuries of tradition through food. That's what Gather Nepal does best."</p>
+        <footer>— Rohan T., Lalitpur</footer>
+      </div>
+
+      <div class="pillar-section">
+        <span class="overline">Cultural Venues</span>
+        <h2>Events in extraordinary places</h2>
+        <p class="lead" style="max-width: 65ch; margin-bottom: var(--lg);">We partner with heritage sites, local artisans, and cultural organizations to bring you events in spaces that tell a story.</p>
+        <div class="pillar-grid" style="margin-top: var(--lg);">
+          <div class="pillar-card reveal">
+            <div class="pillar-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <h3>Patan Museum</h3>
+              <p>Ancient Malla-era courtyard hosting art exhibitions and cultural talks.</p>
+            </div>
+          </div>
+          <div class="pillar-card reveal reveal-delay-1">
+            <div class="pillar-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <h3>Pokhara Lakeside</h3>
+              <p>Open-air concerts and yoga retreats with Annapurna views.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-box reveal">
+        <h2>Experience Nepal's culture</h2>
+        <p>From ancient traditions to contemporary expressions — discover events that connect you with Nepal's living heritage.</p>
+        <a href="/events.html" class="btn btn-lg">Explore Cultural Events</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <a href="/" class="footer-brand">Gather<em> Nepal</em></a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="/events.html">Events</a>
+        <a href="/create-event.html">Host</a>
+        <a href="/login.html">Sign In</a>
+        <a href="/signup.html">Sign Up</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Gather Nepal. Made by hand in Kathmandu.</p>
+    </div>
+  </footer>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/3d.js"></script>
+</body>
+</html>

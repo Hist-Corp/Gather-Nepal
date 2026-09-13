@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community-Driven Events — Gather Nepal</title>
+  <meta name="description" content="Discover how Gather Nepal connects you with local creators, thinkers, and makers. Every event is a chance to build genuine community across Nepal." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,300..600&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css" />
+  <style>
+    .pillar-hero { padding: 140px 0 var(--2xl); background: var(--cream); position: relative; overflow: hidden; }
+    .pillar-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--2xl); align-items: center; }
+    .pillar-hero h1 em { font-style: italic; font-weight: 430; color: var(--brick); }
+    .pillar-hero .lead { font-size: 1.1rem; color: var(--ink-soft); margin-top: var(--md); }
+    .pillar-hero-img { border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .pillar-hero-img img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/3; }
+    .pillar-content { padding: var(--3xl) 0; }
+    .pillar-section { margin-bottom: var(--3xl); }
+    .pillar-section h2 { margin-bottom: var(--lg); }
+    .pillar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--lg); }
+    .pillar-card { background: var(--cream); border: 1px solid var(--border-subtle); border-radius: var(--r-lg); padding: var(--xl); text-align: center; }
+    .pillar-card-icon { width: 56px; height: 56px; border-radius: 50%; background: var(--amber-glow); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--md); color: var(--brick); }
+    .pillar-card h3 { font-size: 1.1rem; margin-bottom: var(--sm); }
+    .pillar-card p { font-size: 0.9rem; color: var(--ink-soft); }
+    .pillar-quote { background: var(--paper-2); border-left: 4px solid var(--brick); padding: var(--xl) var(--2xl); border-radius: var(--r-md); margin: var(--2xl) 0; }
+    .pillar-quote p { font-family: var(--font-serif); font-size: 1.3rem; font-style: italic; color: var(--ink); line-height: 1.6; }
+    .pillar-quote footer { margin-top: var(--md); font-size: 0.9rem; color: var(--ink-soft); }
+    .cta-box { background: var(--brick); color: #fff; border-radius: var(--r-lg); padding: var(--2xl); text-align: center; }
+    .cta-box h2 { color: #fff; margin-bottom: var(--md); }
+    .cta-box p { color: rgba(255,255,255,0.85); margin-bottom: var(--lg); }
+    .cta-box .btn { background: #fff; color: var(--brick); }
+    .cta-box .btn:hover { background: var(--cream); }
+    @media (max-width: 768px) {
+      .pillar-hero-grid { grid-template-columns: 1fr; }
+      .pillar-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <div class="container">
+      <a href="/" class="brand" aria-label="Gather Nepal Home">Gather<em> Nepal</em></a>
+      <div class="nav-links" id="navLinks">
+        <a href="/">Home</a>
+        <a href="/events.html">Browse Events</a>
+        <a href="/#philosophy">Our Story</a>
+        <a href="/#contact">Contact</a>
+        <a href="/dashboard.html" id="dashboard-nav-link" style="display:none;">My Tickets</a>
+        <a href="/create-event.html" id="create-nav-link" style="display:none;">Host Event</a>
+        <a href="/signup.html" class="btn btn-ghost" id="signup-nav-btn">Sign Up</a>
+        <a href="/login.html" class="btn btn-primary nav-cta" id="login-nav-btn">Log In</a>
+        <span id="user-name-display" style="color:var(--brick); font-weight:600; font-size:0.88rem;"></span>
+        <button id="logout-btn" class="btn btn-ghost" style="display:none;">Log Out</button>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Pillar Hero -->
+  <section class="pillar-hero" aria-labelledby="pillar-title">
+    <div class="container">
+      <div class="pillar-hero-grid">
+        <div class="reveal">
+          <span class="overline">Our Philosophy</span>
+          <h1 id="pillar-title">Community-<br><em>Driven</em></h1>
+          <p class="lead">Every event connects you with local creators, thinkers, and makers who call Nepal home. We believe the best experiences come from genuine human connection — not algorithms.</p>
+          <div style="margin-top: var(--lg); display: flex; gap: var(--md); flex-wrap: wrap;">
+            <a href="/events.html" class="btn btn-primary">Explore Events</a>
+            <a href="/signup.html" class="btn btn-outline">Join Community</a>
+          </div>
+        </div>
+        <div class="pillar-hero-img reveal reveal-delay-1">
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80" alt="Group of friends gathering at a community event" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="pillar-content">
+    <div class="container">
+
+      <!-- Why Community Matters -->
+      <div class="pillar-section">
+        <span class="overline">Why Community Matters</span>
+        <h2>Events that bring people together</h2>
+        <p class="lead" style="max-width: 65ch; margin-bottom: var(--xl);">In Nepal, community isn't just a buzzword — it's how we've lived for centuries. From village festivals to neighborhood gatherings, our culture thrives on connection. Gather Nepal brings that spirit to modern events.</p>
+        
+        <div class="pillar-grid">
+          <div class="pillar-card reveal">
+            <div class="pillar-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Meet Local Creators</h3>
+            <p>Connect with artists, musicians, and makers shaping Nepal's creative scene.</p>
+          </div>
+          <div class="pillar-card reveal reveal-delay-1">
+            <div class="pillar-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </div>
+            <h3>Share Stories</h3>
+            <p>Every event is a space for meaningful conversation and shared experiences.</p>
+          </div>
+          <div class="pillar-card reveal reveal-delay-2">
+            <div class="pillar-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3>Build Belonging</h3>
+            <p>Find your tribe — whether you're into jazz, tech, yoga, or Newari cuisine.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial -->
+      <div class="pillar-quote reveal">
+        <p>"I moved to Kathmandu from Pokhara last year and didn't know anyone. Through Gather Nepal's community events, I've found a circle of friends who share my love for live music and mountain culture. It changed everything."</p>
+        <footer>— Priya M., Kathmandu</footer>
+      </div>
+
+      <!-- How It Works -->
+      <div class="pillar-section">
+        <span class="overline">How It Works</span>
+        <h2>Connect with your community</h2>
+        <div class="pillar-grid" style="margin-top: var(--lg);">
+          <div class="pillar-card reveal">
+            <div class="pillar-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+            </div>
+            <h3>1. Discover Events</h3>
+            <p>Browse handpicked events near you — filtered by interest, location, or date.</p>
+          </div>
+          <div class="pillar-card reveal reveal-delay-1">
+            <div class="pillar-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <h3>2. Book Your Spot</h3>
+            <p>Reserve your ticket in seconds. No hidden fees, no complicated checkout.</p>
+          </div>
+          <div class="pillar-card reveal reveal-delay-2">
+            <div class="pillar-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+            </div>
+            <h3>3. Show Up & Connect</h3>
+            <p>Arrive, experience, and leave with new friends and memories.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-box reveal">
+        <h2>Ready to find your people?</h2>
+        <p>Join thousands of Nepalis who are discovering events that matter — and building lasting connections along the way.</p>
+        <a href="/signup.html" class="btn btn-lg">Sign Up Free</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <a href="/" class="footer-brand">Gather<em> Nepal</em></a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="/events.html">Events</a>
+        <a href="/create-event.html">Host</a>
+        <a href="/login.html">Sign In</a>
+        <a href="/signup.html">Sign Up</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Gather Nepal. Made by hand in Kathmandu.</p>
+    </div>
+  </footer>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/3d.js"></script>
+</body>
+</html>

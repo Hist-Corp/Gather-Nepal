@@ -105,26 +105,83 @@
     </div>
   </section>
 
-  <!-- Philosophy: split editorial story -->
-  <section class="section" id="philosophy" aria-labelledby="philosophy-title" style="background:var(--paper-2);">
+<!-- Philosophy: split editorial story -->
+  <section class="section philosophy-section" id="philosophy" aria-labelledby="philosophy-title" style="background:var(--paper-2);">
     <div class="container">
-      <div style="display:grid; grid-template-columns:1fr 1.25fr; gap:var(--2xl); align-items:center;" class="philosophy-grid">
+      <!-- Left accent bar -->
+      <div class="philosophy-accent-left" aria-hidden="true">
+        <div class="accent-dots">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="accent-line"></div>
+        <div class="accent-text">GATHER</div>
+      </div>
+
+      <div class="philosophy-grid">
         <figure class="editorial-img img-reveal reveal">
-          <img src="https://images.unsplash.com/photo-1558430117-1b2d7e58985b?auto=format&fit=crop&w=900&q=80" alt="Evening crowd gathered for a cultural performance" loading="lazy" />
-          <figcaption>Patan · Courtyard Session</figcaption>
+          <img src="/assets/pokhara_lakeside.jpg" alt="Pokhara Lakeside at sunset with Himalayan mountains" loading="lazy" />
+          <figcaption>Pokhara · Lakeside Sunset</figcaption>
         </figure>
 
-        <div class="reveal reveal-delay-1">
+        <div class="philosophy-visual reveal reveal-delay-1">
+          <div class="philosophy-diagram" aria-hidden="true">
+            <div class="diagram-center">
+              <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+              </svg>
+            </div>
+            <div class="diagram-ring">
+              <div class="diagram-node" style="--angle: 0deg;"><span>🎵</span><span>Music & Arts</span></div>
+              <div class="diagram-node" style="--angle: 72deg;"><span>💻</span><span>Tech & Innovation</span></div>
+              <div class="diagram-node" style="--angle: 144deg;"><span>🧘</span><span>Wellness & Yoga</span></div>
+              <div class="diagram-node" style="--angle: 216deg;"><span>🍛</span><span>Food & Culture</span></div>
+              <div class="diagram-node" style="--angle: 288deg;"><span>🤝</span><span>Community & Social</span></div>
+            </div>
+            <p class="diagram-caption">Five pillars of authentic Nepali experiences</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="philosophy-grid" style="margin-top:var(--2xl);">
+        <div class="philosophy-content reveal reveal-delay-1">
           <span class="overline" style="display:inline-flex; margin-bottom:var(--md);">Why Gather Exists</span>
           <h2 id="philosophy-title" style="margin-bottom:var(--lg);">Real moments.<br>Real people.<br><em style="font-style:italic; font-weight:430; color:var(--brick);">Real Nepal.</em></h2>
           <p class="lead" style="margin-bottom:var(--xl);" id="values-text">
             We believe the best memories happen in person. Not on a screen, not in a feed — but in a courtyard in Patan, or beside Fewa Lake as the sun sets over Machhapuchhre.
           </p>
           <div class="philosophy-list">
-            <div class="check-row"><span class="check-dot" aria-hidden="true">✓</span> Every event hand-vetted for quality &amp; authenticity</div>
+            <div class="check-row"><span class="check-dot" aria-hidden="true">✓</span> Every event hand-vetted for quality & authenticity</div>
             <div class="check-row"><span class="check-dot" aria-hidden="true">✓</span> Transparent NPR pricing — no hidden fees ever</div>
             <div class="check-row"><span class="check-dot" aria-hidden="true">✓</span> 75% refund guarantee on all cancelled bookings</div>
           </div>
+        </div>
+
+        <!-- Right side: Impact stats & testimonial -->
+        <div class="philosophy-impact reveal reveal-delay-2">
+          <div class="impact-stats" role="list" aria-label="Platform impact">
+            <div class="impact-item" role="listitem">
+              <div class="impact-num" id="impact-events">0</div>
+              <div class="impact-lbl">Events Hosted</div>
+            </div>
+            <div class="impact-item" role="listitem">
+              <div class="impact-num" id="impact-hosts">0</div>
+              <div class="impact-lbl">Verified Hosts</div>
+            </div>
+            <div class="impact-item" role="listitem">
+              <div class="impact-num" id="impact-cities">4</div>
+              <div class="impact-lbl">Cities Covered</div>
+            </div>
+            <div class="impact-item" role="listitem">
+              <div class="impact-num" id="impact-satisfaction">98%</div>
+              <div class="impact-lbl">Attendee Satisfaction</div>
+            </div>
+          </div>
+          <blockquote class="testimonial">
+            <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M14.017 21v-7.391c0-5.704 3.721-9.073 8.983-10.609l.995 2.151c-2.431.84-3.99 3.464-3.99 6.182h-5.988zm-14.017 0v-7.391c0-5.704 3.741-9.073 8.983-10.609l.995 2.151c-2.431.84-3.99 3.464-3.99 6.182h-5.988z"/></svg>
+            <p>"Gather Nepal made it effortless to find authentic local experiences. The Kathmandu Jazz night at Patan Museum was magical — something I'd never have discovered otherwise."</p>
+            <footer>— Anjali S., Kathmandu</footer>
+          </blockquote>
         </div>
       </div>
     </div>
@@ -137,27 +194,112 @@
         <span class="overline">Our Promise</span>
         <h2 id="values-title">Built on trust, run by people</h2>
       </header>
-      <div class="values-grid">
-        <article class="value-card reveal reveal-delay-1">
-          <div class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-          <h3>Community-Driven</h3>
-          <p>Every event connects you with local creators, thinkers, and makers who call Nepal home.</p>
-        </article>
-        <article class="value-card reveal reveal-delay-2">
-          <div class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <h3>Safe &amp; Transparent</h3>
-          <p>All ticket prices in NPR, zero hidden charges, and a clear 75% refund policy — always.</p>
-        </article>
-        <article class="value-card reveal reveal-delay-3">
-          <div class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 21h8M12 17v4M5 4h14v5a7 7 0 0 1-14 0V4z"/><path d="M5 6H3a2 2 0 0 0 0 4h2M19 6h2a2 2 0 0 1 0 4h-2"/></svg></div>
-          <h3>Rooted in Culture</h3>
-          <p>From Patan's ancient courtyards to Pokhara's lakeside — events rooted in Nepal's living heritage.</p>
-        </article>
-        <article class="value-card reveal reveal-delay-4">
-          <div class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-          <h3>Easy Hosting</h3>
-          <p>Apply to host an event. We handle ticketing, waitlists, and attendee management for you.</p>
-        </article>
+
+      <!-- Editorial Image Strip -->
+      <div class="values-image-strip">
+        <div class="values-image-container reveal">
+          <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="Community gathering at a cultural event in Nepal" loading="lazy" />
+          <div class="values-image-overlay">
+            <p class="values-image-caption">Bringing people together across Nepal's vibrant cities</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="values-layout">
+        <!-- Left sidebar: Live Stats & Quick Links -->
+        <aside class="values-sidebar values-sidebar-left reveal" aria-label="Platform stats">
+          <div class="sidebar-section">
+            <h4 class="sidebar-title">Live Stats</h4>
+            <div class="sidebar-stats">
+              <div class="sidebar-stat">
+                <span class="sidebar-stat-num" id="left-stat-events">0</span>
+                <span class="sidebar-stat-lbl">Events</span>
+              </div>
+              <div class="sidebar-stat">
+                <span class="sidebar-stat-num" id="left-stat-tickets">0</span>
+                <span class="sidebar-stat-lbl">Tickets</span>
+              </div>
+              <div class="sidebar-stat">
+                <span class="sidebar-stat-num" id="left-stat-hosts">0</span>
+                <span class="sidebar-stat-lbl">Hosts</span>
+              </div>
+              <div class="sidebar-stat">
+                <span class="sidebar-stat-num" id="left-stat-cities">4</span>
+                <span class="sidebar-stat-lbl">Cities</span>
+              </div>
+            </div>
+          </div>
+          <div class="sidebar-section">
+            <h4 class="sidebar-title">Quick Links</h4>
+            <ul class="sidebar-list">
+              <li><a href="/events.html?category=music">🎵 Music Events</a></li>
+              <li><a href="/events.html?category=tech">💻 Tech Summits</a></li>
+              <li><a href="/events.html?category=wellness">🧘 Wellness Retreats</a></li>
+              <li><a href="/events.html?category=food">🍛 Food & Culture</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-section sidebar-cta">
+            <p class="sidebar-cta-text">Join our community</p>
+            <a href="/signup.html" class="btn btn-primary btn-sm">Sign Up Free</a>
+          </div>
+        </aside>
+
+        <!-- Center: Values Grid -->
+        <div class="values-grid">
+          <a href="/community.html" class="value-card-link">
+            <article class="value-card reveal reveal-delay-1">
+              <div class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+              <h3>Community-Driven</h3>
+              <p>Every event connects you with local creators, thinkers, and makers who call Nepal home.</p>
+              <span class="value-card-arrow">Learn more →</span>
+            </article>
+          </a>
+          <a href="/safety.html" class="value-card-link">
+            <article class="value-card reveal reveal-delay-2">
+              <div class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+              <h3>Safe &amp; Transparent</h3>
+              <p>All ticket prices in NPR, zero hidden charges, and a clear 75% refund policy — always.</p>
+              <span class="value-card-arrow">Learn more →</span>
+            </article>
+          </a>
+          <a href="/culture.html" class="value-card-link">
+            <article class="value-card reveal reveal-delay-3">
+              <div class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 21h8M12 17v4M5 4h14v5a7 7 0 0 1-14 0V4z"/><path d="M5 6H3a2 2 0 0 0 0 4h2M19 6h2a2 2 0 0 1 0 4h-2"/></svg></div>
+              <h3>Rooted in Culture</h3>
+              <p>From Patan's ancient courtyards to Pokhara's lakeside — events rooted in Nepal's living heritage.</p>
+              <span class="value-card-arrow">Learn more →</span>
+            </article>
+          </a>
+          <a href="/hosting.html" class="value-card-link">
+            <article class="value-card reveal reveal-delay-4">
+              <div class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+              <h3>Easy Hosting</h3>
+              <p>Apply to host an event. We handle ticketing, waitlists, and attendee management for you.</p>
+              <span class="value-card-arrow">Learn more →</span>
+            </article>
+          </a>
+        </div>
+
+        <!-- Right sidebar: Cities & Categories -->
+        <aside class="values-sidebar values-sidebar-right reveal reveal-delay-1" aria-label="Quick navigation">
+          <div class="sidebar-section">
+            <h4 class="sidebar-title">Popular Cities</h4>
+            <ul class="sidebar-list" id="hero-cities">
+              <li><a href="/events.html?location=Kathmandu">🏛️ Kathmandu Valley</a></li>
+              <li><a href="/events.html?location=Pokhara">🏔️ Pokhara Lakeside</a></li>
+              <li><a href="/events.html?location=Lalitpur">🏺 Patan & Lalitpur</a></li>
+              <li><a href="/events.html?location=Nagarkot">🌄 Nagarkot Hills</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-section">
+            <h4 class="sidebar-title">Event Categories</h4>
+            <div class="sidebar-tags" id="hero-categories"></div>
+          </div>
+          <div class="sidebar-section sidebar-cta">
+            <p class="sidebar-cta-text">Host an event?</p>
+            <a href="/create-event.html" class="btn btn-outline btn-sm">Apply to Host</a>
+          </div>
+        </aside>
       </div>
     </div>
   </section>
