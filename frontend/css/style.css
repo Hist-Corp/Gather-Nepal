@@ -1184,9 +1184,19 @@ input[type="checkbox"] { accent-color: var(--brick); }
 
 .philosophy-grid {
   display: grid;
-  grid-template-columns: 280px 1fr 280px;
+  grid-template-columns: 260px 1fr 260px;
   gap: var(--lg);
   align-items: start;
+  min-height: 400px;
+}
+
+.philosophy-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+  padding: var(--lg) 0;
 }
 
 .philosophy-visual {
@@ -1371,32 +1381,35 @@ input[type="checkbox"] { accent-color: var(--brick); }
 }
 
 @media (max-width: 1024px) {
-  .philosophy-grid { grid-template-columns: 1fr !important; }
+  .philosophy-grid { grid-template-columns: 1fr !important; gap: var(--md); }
   .philosophy-visual {
     min-height: 300px;
     margin-bottom: var(--lg);
     order: 1;
+    padding: 0;
   }
   .philosophy-diagram { width: 280px; height: 280px; }
   .diagram-node { transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-110px) rotate(calc(var(--angle) * -1)); }
   .diagram-caption { bottom: -28px; font-size: 0.7rem; }
   .diagram-sidebar-left { order: 2; }
   .diagram-sidebar-right { order: 3; }
-  .diagram-sidebar { position: static; }
+  .diagram-sidebar { position: static; padding: var(--md); }
 }
 
 /* Philosophy diagram sidebars */
 .diagram-sidebar {
   display: flex;
   flex-direction: column;
-  gap: var(--lg);
-  padding: var(--lg);
+  gap: var(--md);
+  padding: var(--md);
   background: var(--cream);
   border-radius: var(--r-lg);
   border: 1px solid var(--border-subtle);
   height: fit-content;
   position: sticky;
   top: 100px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
 }
 
 .sidebar-section {
@@ -1564,21 +1577,42 @@ input[type="checkbox"] { accent-color: var(--brick); }
   font-size: 0.8rem;
 }
 
-/* Responsive: stack sidebars on smaller screens */
+/* Responsive: 2-column layout for medium screens */
 @media (max-width: 1200px) {
-  .diagram-sidebar {
-    position: static;
-  }
-}
-
-@media (max-width: 1024px) {
-  .diagram-sidebar-left {
-    order: 2;
+  .philosophy-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--md);
   }
   .philosophy-visual {
+    grid-column: 1 / -1;
     order: 1;
+    min-height: 320px;
+  }
+  .diagram-sidebar-left {
+    order: 2;
   }
   .diagram-sidebar-right {
     order: 3;
   }
+  .diagram-sidebar {
+    position: static;
+    max-height: none;
+  }
+}
+
+/* Responsive: stack sidebars on smaller screens */
+@media (max-width: 1024px) {
+  .philosophy-grid { grid-template-columns: 1fr !important; gap: var(--md); }
+  .philosophy-visual {
+    min-height: 300px;
+    margin-bottom: var(--lg);
+    order: 1;
+    padding: 0;
+  }
+  .philosophy-diagram { width: 280px; height: 280px; }
+  .diagram-node { transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-110px) rotate(calc(var(--angle) * -1)); }
+  .diagram-caption { bottom: -28px; font-size: 0.7rem; }
+  .diagram-sidebar-left { order: 2; }
+  .diagram-sidebar-right { order: 3; }
+  .diagram-sidebar { position: static; padding: var(--md); }
 }
