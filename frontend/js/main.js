@@ -72,6 +72,16 @@ async function init() {
           if (leftHs) leftHs.textContent = Math.max(uniqueHosts, 12);
           if (leftCt) leftCt.textContent = Math.max(cities.size, 4);
 
+          // Update diagram sidebar stats
+          const sidebarEv = document.getElementById('sidebar-events');
+          const sidebarHs = document.getElementById('sidebar-hosts');
+          const sidebarCt = document.getElementById('sidebar-cities');
+          const sidebarTk = document.getElementById('sidebar-tickets');
+          if (sidebarEv) sidebarEv.textContent = allEvents.length;
+          if (sidebarHs) sidebarHs.textContent = Math.max(uniqueHosts, 12);
+          if (sidebarCt) sidebarCt.textContent = Math.max(cities.size, 4);
+          if (sidebarTk) sidebarTk.textContent = Math.max(totalAttendees, 420).toLocaleString();
+
           io.disconnect();
         }
       }, { threshold: 0.5 });

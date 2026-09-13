@@ -1184,9 +1184,9 @@ input[type="checkbox"] { accent-color: var(--brick); }
 
 .philosophy-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--xl);
-  align-items: center;
+  grid-template-columns: 280px 1fr 280px;
+  gap: var(--lg);
+  align-items: start;
 }
 
 .philosophy-visual {
@@ -1375,8 +1375,210 @@ input[type="checkbox"] { accent-color: var(--brick); }
   .philosophy-visual {
     min-height: 300px;
     margin-bottom: var(--lg);
+    order: 1;
   }
   .philosophy-diagram { width: 280px; height: 280px; }
   .diagram-node { transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-110px) rotate(calc(var(--angle) * -1)); }
   .diagram-caption { bottom: -28px; font-size: 0.7rem; }
+  .diagram-sidebar-left { order: 2; }
+  .diagram-sidebar-right { order: 3; }
+  .diagram-sidebar { position: static; }
+}
+
+/* Philosophy diagram sidebars */
+.diagram-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lg);
+  padding: var(--lg);
+  background: var(--cream);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border-subtle);
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+.sidebar-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sm);
+}
+
+.sidebar-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--brick);
+  margin-bottom: var(--xs);
+}
+
+/* Left sidebar: Pillar quick links */
+.pillar-quick-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--xs);
+}
+
+.pillar-quick-links li a {
+  display: flex;
+  align-items: center;
+  gap: var(--sm);
+  padding: var(--sm);
+  border-radius: var(--r-sm);
+  text-decoration: none;
+  color: var(--ink);
+  transition: var(--trans);
+}
+
+.pillar-quick-links li a:hover {
+  background: var(--paper-2);
+  transform: translateX(4px);
+}
+
+.pillar-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--amber-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.pillar-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pillar-info strong {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.pillar-info small {
+  font-size: 0.7rem;
+  color: var(--ink-dim);
+}
+
+/* Stats grid in left sidebar */
+.sidebar-stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sm);
+}
+
+.sidebar-stat {
+  text-align: center;
+  padding: var(--sm);
+  background: var(--paper-2);
+  border-radius: var(--r-sm);
+}
+
+.sidebar-stat strong {
+  display: block;
+  font-size: 1.2rem;
+  color: var(--brick);
+  font-weight: 700;
+}
+
+.sidebar-stat span {
+  font-size: 0.65rem;
+  color: var(--ink-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Right sidebar: Featured events */
+.featured-events-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sm);
+}
+
+.featured-event-card {
+  display: flex;
+  align-items: center;
+  gap: var(--sm);
+  padding: var(--sm);
+  border-radius: var(--r-sm);
+  text-decoration: none;
+  color: var(--ink);
+  transition: var(--trans);
+  border: 1px solid transparent;
+}
+
+.featured-event-card:hover {
+  background: var(--paper-2);
+  border-color: var(--border-subtle);
+  transform: translateX(4px);
+}
+
+.featured-event-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--amber-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.featured-event-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.featured-event-info strong {
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.featured-event-info span {
+  font-size: 0.68rem;
+  color: var(--ink-dim);
+}
+
+/* CTA buttons in right sidebar */
+.sidebar-cta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sm);
+  padding-top: var(--sm);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.sidebar-cta .btn {
+  width: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+/* Responsive: stack sidebars on smaller screens */
+@media (max-width: 1200px) {
+  .diagram-sidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 1024px) {
+  .diagram-sidebar-left {
+    order: 2;
+  }
+  .philosophy-visual {
+    order: 1;
+  }
+  .diagram-sidebar-right {
+    order: 3;
+  }
 }
