@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Host an Event in Nepal — Gather Nepal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,300..600&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="/" class="brand" aria-label="Gather Nepal Home">Gather<span> Nepal</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="/">Discover</a>
+        <a href="/events.html">All Events</a>
+        <a href="/dashboard.html">Dashboard</a>
+        <a href="/create-event.html" class="active">Host Event</a>
+        <span id="user-name-display" style="color: var(--teal-light); font-weight: 600; font-size: 0.9rem;"></span>
+        <button id="logout-btn" class="btn btn-ghost">Log Out</button>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main style="padding-top: 130px; padding-bottom: var(--space-3xl);">
+    <div class="container">
+      <header style="margin-bottom: var(--space-2xl); text-align: center; max-width: 720px; margin-left: auto; margin-right: auto;">
+        <span class="badge badge-accent" style="margin-bottom: var(--space-md);">Host on Gather Nepal</span>
+        <h1>Create Your Event Application</h1>
+        <p class="lead">Fill out the form below. Our curation team reviews each application within 3-5 business days. You'll be notified via email once approved.</p>
+      </header>
+
+      <div id="create-alert" aria-live="polite"></div>
+
+      <form id="create-event-form" class="card" style="padding: var(--space-xl); max-width: 820px; margin: 0 auto;" novalidate>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg);">
+          <div class="field" style="grid-column: 1 / -1;">
+            <label for="event-title">Event Title *</label>
+            <input type="text" id="event-title" name="title" required placeholder="e.g., Kathmandu Heritage Jazz & Fusion Night" maxlength="120" />
+            <span class="hint">Clear, descriptive titles attract more attendees in Nepal</span>
+          </div>
+
+          <div class="field">
+            <label for="event-category">Category *</label>
+            <select id="event-category" name="category" required>
+              <option value="">Select a category</option>
+              <option value="Music">Music &amp; Concerts</option>
+              <option value="Conference">Conferences &amp; Tech Talks</option>
+              <option value="Workshop">Workshops &amp; Masterclasses</option>
+              <option value="Food">Food &amp; Culinary</option>
+              <option value="Wellness">Wellness &amp; Yoga Retreats</option>
+              <option value="Art">Art &amp; Heritage</option>
+              <option value="Tech">Software &amp; AI Summit</option>
+              <option value="Social">Social &amp; Community Meetup</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="event-format">Format *</label>
+            <select id="event-format" name="format" required>
+              <option value="">Select format</option>
+              <option value="in-person">📍 In-Person</option>
+              <option value="virtual">💻 Virtual/Online</option>
+              <option value="hybrid">🔀 Hybrid</option>
+            </select>
+          </div>
+
+          <div class="field" style="grid-column: 1 / -1;">
+            <label for="event-description">Description *</label>
+            <textarea id="event-description" name="description" required rows="6" placeholder="Tell us about your event! What makes it special? What will attendees experience? Include schedule, guest speakers/performers, and highlights." maxlength="2000"></textarea>
+            <span class="hint">Be detailed — clear descriptions get approved faster</span>
+          </div>
+
+          <div class="field">
+            <label for="event-date">Date *</label>
+            <input type="date" id="event-date" name="date" required min="" />
+          </div>
+
+          <div class="field">
+            <label for="event-time">Start Time *</label>
+            <input type="time" id="event-time" name="time" required value="18:30" />
+          </div>
+
+          <div class="field" style="grid-column: 1 / -1;">
+            <label for="event-venue">Venue Name *</label>
+            <input type="text" id="event-venue" name="venue" required placeholder="e.g., Patan Museum Courtyard / Pragya Bhawan / Hub Nepal" />
+          </div>
+
+          <div class="field" style="grid-column: 1 / -1;">
+            <label for="event-location">City & Address in Nepal *</label>
+            <input type="text" id="event-location" name="location" required placeholder="e.g., Lalitpur, Kathmandu Valley / Pokhara Lakeside / Thamel, Kathmandu" />
+          </div>
+
+          <div class="field">
+            <label for="event-capacity">Capacity (Seats) *</label>
+            <input type="number" id="event-capacity" name="capacity" required min="1" max="50000" value="100" placeholder="100" />
+          </div>
+
+          <div class="field">
+            <label for="event-price">Ticket Price (NPR - Rs.) *</label>
+            <input type="number" id="event-price" name="price" required min="0" step="1" value="0" placeholder="e.g., 1500" />
+            <span class="hint">Set to 0 for free community events</span>
+          </div>
+
+          <div class="field" style="grid-column: 1 / -1;">
+            <label for="event-image">Event Image URL</label>
+            <input type="url" id="event-image" name="image" placeholder="https://images.unsplash.com/photo-..." />
+            <span class="hint">Recommended: 16:10 aspect ratio. A default cover image will be assigned if empty.</span>
+          </div>
+
+          <div class="field" style="grid-column: 1 / -1;">
+            <label for="event-tags">Tags (comma-separated)</label>
+            <input type="text" id="event-tags" name="tags" placeholder="kathmandu, jazz, fusion, heritage, live-music" />
+          </div>
+        </div>
+
+        <div style="margin-top: var(--space-xl); padding-top: var(--space-xl); border-top: 1px solid var(--border-subtle);">
+          <h3 style="margin-bottom: var(--space-lg); color:var(--ink);">Host Information</h3>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg);">
+            <div class="field">
+              <label for="host-name">Host / Organizer Name *</label>
+              <input type="text" id="host-name" name="hostName" required placeholder="Aarav Sharma" />
+            </div>
+            <div class="field">
+              <label for="host-email">Host Contact Email *</label>
+              <input type="email" id="host-email" name="hostEmail" required placeholder="aarav@example.np" />
+            </div>
+            <div class="field" style="grid-column: 1 / -1;">
+              <label for="host-bio">Host Bio & Experience *</label>
+              <textarea id="host-bio" name="hostBio" required rows="4" placeholder="Tell us about yourself or your organization and past events hosted in Nepal." maxlength="1000"></textarea>
+            </div>
+            <div class="field" style="grid-column: 1 / -1;">
+              <label for="host-links">Social / Website Links</label>
+              <input type="text" id="host-links" name="hostLinks" placeholder="https://facebook.com/..., https://yourwebsite.com" />
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: var(--space-xl); padding-top: var(--space-xl); border-top: 1px solid var(--border-subtle);">
+          <div class="field">
+            <label style="display: flex; align-items: flex-start; gap: var(--space-sm); cursor: pointer; font-weight: 500; color: var(--ink-soft);">
+              <input type="checkbox" name="terms" required style="width: 20px; height: 20px; margin-top: 2px; accent-color: var(--accent);" />
+              <span>I agree to the Host Terms & Conditions and understand Gather Nepal guidelines for event hosting.</span>
+            </label>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: var(--space-md); justify-content: flex-end; margin-top: var(--space-xl);">
+          <a href="/dashboard.html" class="btn btn-outline">Cancel</a>
+          <button type="submit" class="btn btn-primary btn-lg" id="submit-event-btn">
+            <span class="btn-text">Submit Application</span>
+            <span class="btn-loading" style="display:none;">Submitting...</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <a href="/" class="footer-brand">Gather<span> Nepal</span></a>
+      <p class="footer-copy">© 2026 Gather Nepal. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/create-event.js"></script>
+</body>
+</html>

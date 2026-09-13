@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team — EventHub Admin</title>
+  <link rel="stylesheet" href="/admin/css/admin.css" />
+</head>
+<body>
+  <div class="layout">
+    <div id="sidebar-root"></div>
+    <div class="main">
+      <div class="topbar">
+        <h1>Team & Staff</h1>
+        <div class="actions"><button class="btn btn-primary" id="add-user-btn">+ Add Staff</button></div>
+      </div>
+      <div id="users-alert"></div>
+      <div class="panel">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Created</th><th>Actions</th></tr></thead>
+            <tbody id="users-tbody"><tr><td colspan="5" class="loading">Loading team...</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-root"></div>
+
+  <script src="/admin/js/admin-api.js"></script>
+  <script src="/admin/js/users-admin.js"></script>
+</body>
+</html>

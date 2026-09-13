@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Site Content — Gather Admin</title>
+  <link rel="stylesheet" href="/admin/css/admin.css" />
+</head>
+<body>
+  <div class="layout">
+    <div id="sidebar-root"></div>
+    <div class="main">
+      <div class="topbar">
+        <h1>Site Content</h1>
+        <div class="actions"><a class="btn btn-outline" href="/" target="_blank">Preview Site ↗</a></div>
+      </div>
+      <div id="content-alert"></div>
+      <div class="panel">
+        <h2>Edit Frontend Content</h2>
+        <p style="color:var(--muted); font-size:.88rem; margin-bottom:20px;">These fields control the text shown across the public website. Changes apply immediately.</p>
+        <form id="content-form" class="form-grid">
+          <div class="field full"><label>Site Name</label><input name="site_name" /></div>
+          <div class="field full"><label>Hero Badge</label><input name="hero_badge" /></div>
+          <div class="field full"><label>Hero Title</label><input name="hero_title" /></div>
+          <div class="field full"><label>Hero Subtitle</label><textarea name="hero_subtitle"></textarea></div>
+          <div class="field full"><label>About Title</label><input name="about_title" /></div>
+          <div class="field full"><label>About Text</label><textarea name="about_text"></textarea></div>
+          <div class="field full"><label>Values Text</label><textarea name="values_text"></textarea></div>
+          <div class="field"><label>Contact Email</label><input name="contact_email" /></div>
+          <div class="field"><label>Contact Phone</label><input name="contact_phone" /></div>
+          <div class="field full"><label>Contact Address</label><input name="contact_address" /></div>
+          <div class="field full"><label>Footer Text</label><input name="footer_text" /></div>
+        </form>
+        <div class="modal-actions" style="justify-content:flex-start;">
+          <button class="btn btn-primary" id="save-content-btn">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/admin/js/admin-api.js"></script>
+  <script src="/admin/js/content-admin.js"></script>
+</body>
+</html>

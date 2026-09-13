@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event Applications — Gather Admin</title>
+  <link rel="stylesheet" href="/admin/css/admin.css" />
+</head>
+<body>
+  <div class="layout">
+    <div id="sidebar-root"></div>
+    <div class="main">
+      <div class="topbar"><h1>Event Applications</h1></div>
+      <div id="apps-alert"></div>
+      <div class="panel">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Event</th><th>Host</th><th>Category</th><th>Date</th><th>Format</th><th>Submitted</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody id="apps-tbody"><tr><td colspan="8" class="loading">Loading applications...</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-root"></div>
+
+  <script src="/admin/js/admin-api.js"></script>
+  <script src="/admin/js/applications-admin.js"></script>
+</body>
+</html>

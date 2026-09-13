@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — EventHub Admin</title>
+  <link rel="stylesheet" href="/admin/css/admin.css" />
+</head>
+<body>
+  <div class="layout">
+    <div id="sidebar-root"></div>
+    <div class="main">
+      <div class="topbar">
+        <h1>Dashboard</h1>
+        <div class="actions">
+          <button class="btn btn-outline" onclick="location.href='/admin/events.html'">+ New Event</button>
+          <a class="btn btn-outline" href="/" target="_blank">View Site ↗</a>
+        </div>
+      </div>
+
+      <div class="stats-grid" id="stats-grid"><div class="loading">Loading stats...</div></div>
+
+      <div class="panel">
+        <h2>Bookings Over Time</h2>
+        <div class="chart" id="booking-chart"><div class="loading">Loading...</div></div>
+      </div>
+
+      <div class="panel">
+        <h2>Top Events</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Event</th><th>Category</th><th>Date</th><th>Tickets Sold</th><th>Revenue</th></tr></thead>
+            <tbody id="top-events"><tr><td colspan="5" class="loading">Loading...</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Recent Bookings</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Customer</th><th>Event</th><th>Tickets</th><th>Total</th><th>Status</th><th>When</th></tr></thead>
+            <tbody id="recent-bookings"><tr><td colspan="6" class="loading">Loading...</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/admin/js/admin-api.js"></script>
+  <script src="/admin/js/dashboard.js"></script>
+</body>
+</html>

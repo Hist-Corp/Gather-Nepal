@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Staff Login — Gather Admin</title>
+  <link rel="stylesheet" href="/admin/css/admin.css" />
+</head>
+<body>
+  <div class="auth-wrapper">
+    <div class="auth-card">
+      <div class="logo">Gather<span>.</span></div>
+      <div class="subtitle">Staff Management Portal</div>
+      <div id="login-error"></div>
+      <form id="login-form">
+        <div class="field">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="admin@gather.events" required />
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input type="password" name="password" placeholder="••••••••" required />
+        </div>
+        <button class="btn" type="submit" id="login-btn">Sign In</button>
+      </form>
+      <div class="back"><a href="/">← Back to website</a></div>
+      <div class="back" style="margin-top:10px; font-size:.78rem;">Default: admin@gather.events / admin123</div>
+    </div>
+  </div>
+
+  <script>
+    if (localStorage.getItem('gather_admin_token')) window.location.href = '/admin/index.html';
+
+    function escapeHtml(s) {
+      return String(s == null ? '' : s).replace(/&/g, '&').replace(/</g, '<').replace(/>/g, '>').replace(/"/g, '"').replace(/'/g, ''');
+    }
+
+    document.getElementById('login-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('login-btn');
+      const err = document.getElementById('login-error');
+      err.innerHTML = '';
+      const email = e.target.email.value.trim();
+      const password = e.target.password.value;
+      btn.disabled = true; btn.textContent = 'Signing in...';
+
+      try {
+        const res = await fetch('/api/auth/staff/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+        const data = await res.json();
+        if (!res.ok) {
+          err.innerHTML = `<div class="alert alert-error">${escapeHtml(data.error || 'Login failed')}</div>`;
+          btn.disabled = false; btn.textContent = 'Sign In';
+          return;
+        }
+        localStorage.setItem('gather_admin_token', data.token);
+        localStorage.setItem('gather_admin_user', JSON.stringify(data.user));
+        window.location.href = '/admin/index.html';
+      } catch (err2) {
+        err.innerHTML = '<div class="alert alert-error">Network error — please try again</div>';
+        btn.disabled = false; btn.textContent = 'Sign In';
+      }
+    });
+  </script>
+</body>
+</html>

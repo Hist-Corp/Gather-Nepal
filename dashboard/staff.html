@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Staff — Gather Admin</title>
+  <link rel="stylesheet" href="/admin/css/admin.css" />
+</head>
+<body>
+  <div class="layout">
+    <div id="sidebar-root"></div>
+    <div class="main">
+      <div class="topbar">
+        <h1>Staff Management</h1>
+        <div class="actions"><button class="btn btn-primary" id="add-staff-btn">+ Add Staff</button></div>
+      </div>
+      <div id="staff-alert"></div>
+      <div class="panel">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Created</th><th>Actions</th></tr></thead>
+            <tbody id="staff-tbody"><tr><td colspan="5" class="loading">Loading staff...</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-root"></div>
+
+  <script src="/admin/js/admin-api.js"></script>
+  <script src="/admin/js/staff-admin.js"></script>
+</body>
+</html>
